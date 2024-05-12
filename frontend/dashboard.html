@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
+</head>
+<body>
+    <header>
+        <h1>Expense Tracker</h1>
+        <button id="logoutBtn">Logout</button>
+        
+    </header>
+
+    <div class="container">
+        <main>
+            <section id="expenseGroups" class="col">
+                <h2>Expense Groups</h2>
+                <ul id="expenseGroupList">
+                
+                </ul>
+                <button id="createExpenseGroupBtn"><i class="fas fa-plus"></i> Create New Expense Group</button>
+            </section>
+
+            <section id="expenseGroupDetails" class="col">
+                <h2>Expense Group Details</h2>
+                <div id="expenseGroupInfo">
+                    <!-- Detailed information of the selected expense group will be dynamically populated here -->
+                </div>
+                <div id="expenseDetails" class="expense-details">
+                    <!-- Detailed information about expenses will be dynamically populated here -->
+                </div>
+                <div id="participantsOwing" class="participants-owing">
+                    <!-- Participants that owe will be dynamically populated here -->
+                </div>
+                <div id="addExpenseFormContainer">
+                    <!-- Form to add expenses will be dynamically populated here -->
+                </div>
+                <!-- Add a new div to display total owes -->
+                <div id="totalOwes">
+                    <!-- Total owes between participants will be dynamically populated here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+   
+    <div id="createExpenseGroupModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create New Expense Group</h2>
+            <form id="expenseGroupForm">
+                <div class="form-group">
+                    <label for="groupName">Group Name</label>
+                    <input type="text" id="groupName" name="groupName" required>
+                </div>
+                <div class="form-group">
+                    <label for="groupDate">Date of Creation</label>
+                    <input type="date" id="groupDate" name="groupDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="groupParticipants">Participants (comma-separated)</label>
+                    <input type="text" id="groupParticipants" name="groupParticipants" required>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Expense Tracker. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
